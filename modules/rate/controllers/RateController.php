@@ -38,6 +38,12 @@ class RateController extends Controller
      */
     public function actionIndex()
     {
+        if(\Yii::$app->request->isAjax){
+            $model = $this->findModel($_POST["id"]);
+            $model->updateSpeed($_POST["speed"]);
+            return "нормуль";
+
+        }
         $searchModel = new RateSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
@@ -45,6 +51,7 @@ class RateController extends Controller
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
+
     }
 
     /**
@@ -131,4 +138,13 @@ class RateController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+    public function actionPage()
+{
+    // $form_model = new TestForm();
+
+    // if($form_model->load(\Yii::$app->request->post())){
+    //     var_dump($form_model);
+    // }
+    // return $this->render('page', compact('form_model'));
+}
 }

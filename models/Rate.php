@@ -46,4 +46,9 @@ class Rate extends \yii\db\ActiveRecord
             'speed' => 'Speed',
         ];
     }
+
+    public function updateSpeed( $speed){
+        $this->speed = $speed;
+        return $this->save(false);
+    }
 }
