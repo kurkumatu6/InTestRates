@@ -10,7 +10,7 @@ use yii\grid\GridView;
 /** @var app\models\RateSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Rates';
+$this->title = 'Тарифы';
 $this->params['breadcrumbs'][] = $this->title;
 
 // var_dump($dataProvider)
