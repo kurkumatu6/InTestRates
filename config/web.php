@@ -51,6 +51,11 @@ $config = [
         ],
 
     ],
+    'modules' => [
+        'rate' => [
+            'class' => 'app\modules\rate\Module',
+        ],
+    ],
     'params' => $params,
 ];
 
